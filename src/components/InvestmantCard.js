@@ -11,7 +11,7 @@ import { deposit, withdraw, reset } from '../redux/investment/actions';
 
 const InvestmantCard = () => {
     const dispatch = useDispatch();
-    const { amount, error } = useSelector(state => state.investment);
+    const { amount, error } = useSelector((state) => state.investment);
     
     const handleDeposit = () => {
         dispatch(deposit(10));
@@ -33,11 +33,14 @@ const InvestmantCard = () => {
                 </Typography>
         
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {amount}$
+                   {amount}$
                 </Typography>
-                {error && <Typography sx={{ mb: 1.5 }} color="red">
+
+                {error && (
+                <Typography sx={{ mb: 1.5 }} color="red">
                     {error}
-                </Typography>}
+                </Typography>)}
+
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={handleDeposit}>

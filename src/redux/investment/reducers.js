@@ -29,12 +29,9 @@ const reducer = (state = initialState, action) => {
             };
         }
             
-        case RESET: {
-            return {
-                ...state,
-                amount: action.payload
-            };
-        }
+       case RESET: {
+	            return initialState
+	        }
         
             
         default: {
